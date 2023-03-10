@@ -25,9 +25,9 @@ exit 0
 fi
 clear
 apt install jq curl -y
-DOMAIN=vpn-cakill.live
+DOMAIN=envy-vpsku.me
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.vpn-cakill.live
+SUB_DOMAIN=${sub}.envy-vpsku.me
 CF_ID=kidroster55@gmail.com
 CF_KEY=1fa7ccec0343954e2242e221e38a439d20277
 set -euo pipefail

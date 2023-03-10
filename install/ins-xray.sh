@@ -59,11 +59,6 @@ touch /var/log/xray/error.log;
 # // VERSION XRAY
 export version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 
-# // INSTALL CORE XRAY
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version ${version}
-
-systemctl stop nginx
-
 # // INSTALL CERTIFICATES
 mkdir /root/.acme.sh
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
@@ -77,6 +72,10 @@ service squid start
 systemctl restart nginx
 sleep 0.5;
 clear;
+
+systemctl stop nginx
+
+https://github.com/cakill26/drgvpnscript/blob/main/install/ins-xray.sh
 
 # // UUID PATH
 export uuid=$(cat /proc/sys/kernel/random/uuid)
